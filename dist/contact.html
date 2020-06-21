@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">   
+    <link rel="shortcut icon" type="image/x-icon" href="./img/icon.png" />    
+    <script src="https://kit.fontawesome.com/6f38e485ba.js" crossorigin="anonymous"></script>
+
+    
+    
+    <title>John Anthony Balbin</title>
+</head>
+<body>
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="resume"></div>
+                <div class="download-cv">
+                    <a href="./files/JOHN ANTHONY BALBIN.pdf" class="download">
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+            <ul class="menu-nav">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                    Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                    About Me
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="work.html" class="nav-link">
+                    My Projects
+                    </a>
+                </li>
+                <li class="nav-item current">
+                    <a href="contact.html" class="nav-link">
+                    Contact Me
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="home" class="homie">
+            <h4 class="lg-heading-f">
+                Let's <span class="text-secondary">Connect!</span>
+            </h4>
+            <h4 class="lg-heading-s">
+                I would love to help you in your <span class="text-secondary">website </span>needs.
+            </h4>
+
+        <div class="main-body">
+            <div class="contact-image">
+                <img src="./img/contact.png" alt="John Anthony Balbin">
+                <h1>Let's make something <span class="text-secondary">AWESOME</span> together</h1>
+                <p>Whether you have questions about my projects or anything else, I am ready to answer all your questions.</p>
+            </div>
+            <div class="alert">Your message has been sent!</div>
+            <form method="POST" id="contactForm">
+                <div class="container">
+                    <div class="row100">
+                        <div class="col">
+                            <div class="inputBox">
+                                <input type="text" name="" id="fname" required="required">
+                                <span class="text">First Name</span>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="inputBox">
+                                <input type="text" name="" id="lname" required="required">
+                                <span class="text">Last Name</span>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row100">
+                        <div class="col">
+                            <div class="inputBox">
+                                <input type="text" name="" id="email" required="required">
+                                <span class="text">Email</span>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="inputBox">
+                                <input type="text" name="" id="subject" required="required">
+                                <span class="text">Subject</span>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row100">
+                        <div class="col">
+                            <div class="inputBox textarea">
+                                <textarea id="form-text-area"  required="required"></textarea>
+                                <span class="text">Message</span>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                    </div>  
+                    
+                    <div class="row100">
+                        <div class="col">
+                            <input class="btn-submit" type="submit" value="Send">
+                        </div>
+                    </div> 
+                </div>   
+            </form> 
+        </div>
+    </main>
+
+    <footer style="position: fixed;">
+        <div class="footer-content" >
+            <h1 class="text-signature">&lt;<span><strong>Janny</strong></span>C{}des/&gt;</h1>
+        </div>
+    </footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $('form').on('submit', (e) => {
+            e.preventDefault();
+
+            const fname = $('#fname').val().trim();
+            const lname = $('#lname').val().trim();
+            const email = $('#email').val().trim();
+            const subject= $('#subject').val().trim();
+            const text = $('#form-text-area').val().trim();
+
+            const data = {
+                "fname": fname,
+                "lname": lname,
+                "email": email,
+                "subject": subject,
+                "text": text
+            };
+
+            $.post('https://john-anthony-balbin.web.app/email', data, function(res) {
+                console.log("Email sent successfully!");
+                document.querySelector('.alert').style.display = 'block';
+
+                setTimeout(()=>{
+                    document.querySelector('.alert').style.display = 'none';
+                }, 3000);
+
+                document.getElementById('contactForm').reset();
+            })
+        
+        });
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+</body>

@@ -1,0 +1,427 @@
+@import 'config';
+@import 'menu';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include background();
+    background: $primary-color;
+    color: set-text-color($primary-color);
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    visibility: visible;
+    min-height: 100%;
+}
+
+//Headings
+
+h1,
+h2,
+h3{
+    margin: 0;
+    font-weight: 400;
+
+    &.lg-heading{
+        font-size: 5rem;
+        font-weight: 600;
+    }
+
+    &.sm-heading{
+        margin-bottom: 2rem;
+        padding: 0.2rem 1rem;
+
+        &.wrap{
+            color: #000;
+        }
+    }
+}
+
+h4{
+    &.lg-heading-f{
+        margin: 0px 0px 0px 0px;
+        font-size: 5em;
+        font-weight: 600;
+    }
+
+    &.lg-heading-s{
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        font-size: 2em;
+        font-weight: 600;
+    }
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+header{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+
+.text-secondary{
+    color: $secondary-color;
+}
+
+main{
+    padding: 4rem;
+    height: 100%;
+
+    .icons{
+        margin-top: 1rem;
+
+        a{
+            padding: 0.4rem;
+
+            &:hover{
+                color: $secondary-color;
+                @include easeOut();
+            }
+        }
+    }
+
+    &.homie{
+        &.show{
+            visibility: hidden;
+            transform: translate3d(0, 0, 100%);
+            @include easeOut();
+        }
+    }
+
+    &#home{
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        h1{
+            margin-top: 5vh;
+        }
+    }
+
+    .portrait{
+        width: 250px;
+        height: 250px;
+        background: url(../img/profile-image.jpg);
+        border-radius: 50%;
+        border: solid 3px $secondary-color;
+        background-size: cover;
+    }
+
+
+}
+
+.download-cv{
+        margin-top: 1rem;
+        font-size: 30px;
+
+        a{
+            text-decoration: none;
+            
+            padding: 0.4rem;
+
+            &:hover{
+                color: $secondary-color;
+                @include easeOut();
+            }
+        }
+}
+
+footer {
+    position: static;
+    min-height: 53px;
+    background-color: #303036;
+    color: #d3d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    font-size: 14px;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+footer h1{
+    text-align: center;
+}
+
+.text-signature span{
+    color: $secondary-color;
+}
+
+
+.about-info{
+    display: grid;
+    gap: 30px;
+    grid-template-areas: 
+    'bio-image bio bio'
+    'job1 job2 job3';
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+}
+
+.bio-image{
+    grid-area: bio-image;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+    width: 250px;
+    height: 250px;
+}
+
+.bio{
+    grid-area: bio;
+}
+
+.job-1{
+    grid-area: job1;
+}
+
+.job-2{
+    grid-area: job2;
+}
+
+.job-3{
+    grid-area: job3;
+}
+
+.job{
+    padding: 0.5rem;
+    border-bottom: $secondary-color 3px solid;
+    border-right: $secondary-color 3px solid;
+
+    &:hover{
+        transform: translate3d(0, -5px, 0);
+        @include easeOut;
+    }
+}
+
+//Work/Projects
+
+.projects{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+.card{
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 210px 210px 50;
+    grid-template-areas: 
+    'image'
+    'text'
+    'tech';
+    
+    border: 3px $primary-color solid;
+    box-shadow: 5px 5px 5px $secondary-color;
+    text-align: center;
+
+    img{
+        width: 100%;
+        height: 200px;
+    }
+
+    &:hover{
+        transform: scale(1.05);
+        @include easeOut;
+    }
+}
+
+.card-image{
+    grid-area: image;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+}
+
+.card-text{
+    grid-area: text;
+    margin: 15px;
+
+    h2{
+        margin-top: 0px;
+        font-weight: 600;
+        color: $secondary-color;
+    }
+}
+
+.card-tech{
+    grid-area: tech;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        margin: 10px;
+        width: 75px;
+        height: 20px;
+    }
+}
+
+//Contact Form
+
+.main-body{
+    display: grid;
+    grid-template-areas: 
+    'form image';
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
+}
+
+.contact-image{
+    grid-area: image;
+    width: 100%;
+    // background: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-image h1{
+    font-weight: bold;
+    padding: 10px;
+}
+
+.contact-image p {
+    padding: 0 20px;
+    text-align: center;
+}
+
+.contact-image img{
+    width: 80%;
+    height: 80%;
+}
+
+.container{
+    grid-area: form;
+    // background: salmon;
+    width: 100%;
+    padding: 50px;
+}
+
+.container .row100{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.container .row100 .col{
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 10px;
+    transition: 0.5s;
+}
+
+.container .row100 .inputBox{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: $secondary-color;
+}
+
+.container .row100 .inputBox input,
+.container .row100 .inputBox.textarea textarea{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 0 10px;
+    z-index: 1;
+    color: $primary-color;
+}
+
+.container .row100 .inputBox .text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.container .row100 .inputBox input:focus + .text,
+.container .row100 .inputBox input:valid + .text{
+    top: -35px;
+    left: -10px;
+}
+
+.container .row100 .inputBox .line{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: $secondary-color;
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+
+}
+
+.container .row100 .inputBox input:focus ~ .line,
+.container .row100 .inputBox input:valid ~ .line{
+    height: 100%;
+}
+
+.container .row100 .inputBox.textarea{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
+}
+
+.container .row100 .inputBox.textarea textarea{
+    height: 100%;
+    resize: none;
+}
+
+.container .row100 .inputBox textarea:focus + .text,
+.container .row100 .inputBox textarea:valid + .text{
+    top: -35px;
+    left: -10px;
+}
+
+.container .row100 .inputBox textarea:focus ~ .line,
+.container .row100 .inputBox textarea:valid ~ .line{
+    height: 100%;
+}
+
+.btn-submit{
+    border: 2px $secondary-color solid;
+    color: $secondary-color;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.alert{
+    text-align: center;
+    padding: 10px;
+    background: #79c879;
+    color: #fff;
+    margin-bottom: 10px;
+    display: none;
+}
+
+@import 'mobile';

@@ -1,0 +1,160 @@
+//For Wide Screens
+@include mediaXl{
+    .projects{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+//Desktops & Laptops
+@include mediaLg{
+    .projects{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+//Tablets & Small Laptop
+@include mediaMd{
+    main{
+        padding-bottom: 0px;
+        
+        h4{
+            text-align: center;
+
+            &.lg-heading-f{
+                margin: 0px 0px 0px 0px;
+                font-size: 1.5em;
+                font-weight: 600;
+            }
+        
+            &.lg-heading-s{
+                margin: 0px 0px 0px 0px;
+                padding: 0px 0px 0px 0px;
+                font-size: 1em;
+                font-weight: 100;
+            }
+        }
+
+        h1,
+        h2,
+        h3{
+            margin: 0;
+            font-weight: 400;
+            text-align: center;
+            
+            &.lg-heading{
+                line-height: 1.5;
+                font-size: 1.7rem;
+                font-weight: 600;
+            }
+
+        }
+
+        .portrait{
+            width: 200px;
+            height: 200px;
+            background: url(../img/profile-image.jpg);
+            border-radius: 50%;
+            border: solid 3px $secondary-color;
+            background-size: cover;
+        }
+
+    }
+
+    ul.menu-nav,
+    div.menu-branding{
+        float: none;
+        width: 100%;
+        min-height: 0;
+
+        &.show{
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .menu-nav{
+        height: 75vh;
+        transform: translate3d(-100%, 0, 0);
+        font-size: 24px;
+    }
+
+    .menu-branding{
+        height: 25vh;
+        transform: translate3d(100%, 0, 0);
+
+        .resume{
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+        }
+
+        .download{
+            font-size: 20px;
+        }
+    }
+
+    .about-info{
+        grid-template-areas: 
+        'bio-image'
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+
+        grid-template-columns: 1fr;
+    }
+
+    .projects{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    //Contact Form
+    .main-body{
+        grid-template-areas: 
+        'form';
+        grid-template-columns: 1fr; 
+
+        padding: 0 0 50px 0;
+
+    }
+    
+    .container{
+        padding: 0 0 0 50px;
+    }
+    .contact-image{
+        display: none;
+    }
+    
+}
+
+
+
+//Smartphones
+@include mediaSm{
+
+    main#home h1{
+        padding-bottom: 0px;
+    }
+
+    .projects{
+        grid-template-columns: 1fr;
+    }
+
+    .container{
+        padding: 10px;
+    }
+
+    h4{
+        
+        &.lg-heading-f{
+            margin: 0px 0px 0px 0px;
+            font-size: 5em;
+            font-weight: 600;
+        }
+    
+        &.lg-heading-s{
+            font-size: 1em;
+        }
+    }
+
+}
