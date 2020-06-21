@@ -68,9 +68,9 @@
                 <h1>Let's make something <span class="text-secondary">AWESOME</span> together</h1>
                 <p>Whether you have questions about my projects or anything else, I am ready to answer all your questions.</p>
             </div>
-            <div class="alert">Your message has been sent!</div>
             <form method="POST" id="contactForm">
                 <div class="container">
+                    <div class="alert">Your message has been sent!</div>
                     <div class="row100">
                         <div class="col">
                             <div class="inputBox">
@@ -112,7 +112,6 @@
                             </div>
                         </div>
                     </div>  
-                    
                     <div class="row100">
                         <div class="col">
                             <input class="btn-submit" type="submit" value="Send">
@@ -150,13 +149,15 @@
 
             $.post('https://john-anthony-balbin.web.app/email', data, function(res) {
                 console.log("Email sent successfully!");
-                document.querySelector('.alert').style.display = 'block';
+
+                document.querySelector('.alert').style.display = 'inline';
 
                 setTimeout(()=>{
                     document.querySelector('.alert').style.display = 'none';
                 }, 3000);
 
                 document.getElementById('contactForm').reset();
+
             })
         
         });
