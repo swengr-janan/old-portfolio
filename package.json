@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "responsive-portfolio",
   "main": "index.js",
-  "homepage": "https://swengr-janan.github.io/john-anthony-balbin",
+  "homepage": "https://swengr-janan.github.io",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
     "deploy": "gh-pages -d dist"
