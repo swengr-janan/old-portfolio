@@ -187,7 +187,7 @@ main {
   main .portrait {
     width: 250px;
     height: 250px;
-    background: url(../img/profile-image.jpg);
+    background: url(../img/dp.jpeg);
     border-radius: 50%;
     border: solid 3px #00FFFF;
     background-size: cover; }
@@ -224,7 +224,8 @@ footer h1 {
 .about-info {
   display: grid;
   gap: 30px;
-  grid-template-areas: 'bio-image bio bio' 'job1 job2 job3';
+  grid-template-areas: 'bio-image bio bio'
+ 'job1 job2 job3';
   grid-template-columns: repeat(3, 1fr);
   overflow: hidden; }
 
@@ -265,7 +266,9 @@ footer h1 {
   display: grid;
   grid-template-columns: 300px;
   grid-template-rows: 210px 210px 50;
-  grid-template-areas: 'image' 'text' 'tech';
+  grid-template-areas: 'image'
+ 'text'
+ 'tech';
   border: 3px #444 solid;
   box-shadow: 5px 5px 5px #00FFFF;
   text-align: center; }
@@ -471,7 +474,7 @@ footer h1 {
     main .portrait {
       width: 200px;
       height: 200px;
-      background: url(../img/profile-image.jpg);
+      background: url(../img/dp.jpeg);
       border-radius: 50%;
       border: solid 3px #00FFFF;
       background-size: cover; }
@@ -497,7 +500,11 @@ footer h1 {
     .menu-branding .download {
       font-size: 20px; }
   .about-info {
-    grid-template-areas: 'bio-image' 'bio' 'job1' 'job2' 'job3';
+    grid-template-areas: 'bio-image'
+ 'bio'
+ 'job1'
+ 'job2'
+ 'job3';
     grid-template-columns: 1fr; }
   .projects {
     grid-template-columns: repeat(2, 1fr); }
