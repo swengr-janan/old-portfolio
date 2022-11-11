@@ -7,7 +7,7 @@
 
 body {
     @include background();
-    background: $primary-color;
+    background: $home-image;
     color: set-text-color($primary-color);
     height: 100%;
     margin: 0;
@@ -226,7 +226,7 @@ footer h1{
 
     img{
         width: 100%;
-        height: 200px;
+        height: 20000px;
     }
 
     &:hover{
